@@ -15,7 +15,11 @@ const PostList = ()=>{
             // }
     const [posts,setPosts] = useState([])
     const fetchPost = async()=>{
-        const res = await axios.get('http://localhost:4000/posts')
+        // old version: use Post Service
+        // const res = await axios.get('http://localhost:4000/posts')
+        // setPosts(res.data)
+        // new version: use Query Service
+        const res = await axios.get('http://localhost:4002/posts')
         setPosts(res.data)
     }
     useEffect(()=>{fetchPost()},[])
@@ -24,7 +28,8 @@ const PostList = ()=>{
             <div className="card" style={{width:'30%',marginBottom:'20px'}} key={[post.id]}>
                 <div className="card-body">
                     <h2>{post.title}</h2>
-                    <CommentList postId={post.id}/>
+                    {/* <CommentList postId={post.id}/> */}
+                    <CommentList comments={post.comments}/>
                     <CommentCreate postId={post.id}/>
                 </div>         
             </div>
