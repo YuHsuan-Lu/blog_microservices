@@ -3,16 +3,30 @@ import axios from 'axios'
 import CommentCreate from "./CommentCreate";
 import CommentList from "./CommentList";
 const PostList = ()=>{
+    // old version
     // posts = {
                 // "3559e7df": {
                 //     "id": "3559e7df",
                 //     "title": "123"
-                // },
-                // "fb472456": {
-                //     "id": "fb472456",
-                //     "title": "second post"
                 // }
             // }
+    // new version
+    // posts = {
+    //     "096232ac": {
+    //         "id": "096232ac",
+    //         "title": "111",
+    //         "comments": [
+    //             {
+    //                 "id": "4641c8a6",
+    //                 "content": "111"
+    //             },
+    //             {
+    //                 "id": "b6d91d40",
+    //                 "content": "222"
+    //             }
+    //         ]
+    //     }
+    // }
     const [posts,setPosts] = useState([])
     const fetchPost = async()=>{
         // old version: use Post Service
