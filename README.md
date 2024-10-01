@@ -28,3 +28,5 @@ time:after handling CommentModerated and update the comment accordingly
 sender:comments
 reciever:query
 id:string/content:string/postId:string/status:'approved'|'rejected'
+
+dealing with missing event
