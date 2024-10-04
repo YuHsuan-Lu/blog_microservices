@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event-bus-depl
+spec:
+  replicas: 1
+  # selector: find a pod that match the label <app:event-bus>
+  selector:
+    matchLabels:
+      app: event-bus
+  # template: specify the configuration of pod that we want the deployment to create
+  template:
+    metadata:
+      labels:
+        app: event-bus
+    spec:
+      containers:
+        - name: event-bus
+          # image: olivialu314/event-bus:0.0.1
+          # to avoid change of config file every update
+          image: olivialu314/event-bus:latest
