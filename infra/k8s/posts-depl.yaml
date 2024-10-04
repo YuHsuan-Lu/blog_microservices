@@ -19,3 +19,19 @@ spec:
           # image: olivialu314/posts:0.0.1
           # to avoid change of config file every update
           image: olivialu314/posts:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-clusterip-srv
+spec:
+  selector:
+    app: posts
+  # optional, because k8s will asssign type automatically
+  type: ClusterIP
+  ports:
+    - name: posts
+      protocol: TCP
+      port: 4000
+      # should match port of posts
+      targetPort: 4000
