@@ -6,7 +6,7 @@ spec:
   replicas: 1
   # selector: find a pod that match the label <app:posts>
   selector:
-    mathLabels:
+    matchLabels:
       app: posts
   # template: specify the configuration of pod that we want the deployment to create
   template:
@@ -16,4 +16,6 @@ spec:
     spec:
       containers:
         - name: posts
-          image: YuHsuan-Lu/posts:0.0.1
+          # image: olivialu314/posts:0.0.1
+          # to avoid change of config file every update
+          image: olivialu314/posts:latest
