@@ -32,6 +32,9 @@ spec:
   ports:
     - name: event-bus
       protocol: TCP
+      # incoming port of event-bus-clusterip-srv
+      # match "http://event-bus-clusterip-srv:4005/events" in posts/index.js
       port: 4005
-      # should match port of event-bus
+      # incoming port of pod/event-bus
+      # match "app.listen(4005, () => {" in event-bus/index.js
       targetPort: 4005
