@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: posts-depl
+spec:
+  replicas: 1
+  # selector: find a pod that match the label <app:posts>
+  selector:
+    mathLabels:
+      app: posts
+  # template: specify the configuration of pod that we want the deployment to create
+  template:
+    metadata:
+      labels:
+        app: posts
+    spec:
+      containers:
+        - name: posts
+          image: YuHsuan-Lu/posts:0.0.1

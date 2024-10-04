@@ -1,5 +1,5 @@
 ![Screenshot from 2024-09-30 15-07-15](https://github.com/user-attachments/assets/a499355d-b7a1-4465-bc44-8e6dcf3ef30d)
-
+used tool: react, node/express, axios, docker, kubernetes, async communication
 independent service
 (the website will maintain most of usage even if other service crash)
 
