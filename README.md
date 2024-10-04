@@ -7,26 +7,28 @@ comment moderation
 
 即時性
 
+all the events pass through event broker,
+the event bus will broadcast them
+the services will be triggered by certain events:
 
-all the events pass through event broker:
-1. PostCreated 
-time: when post get created
-sender: posts service
-reciver: query
-graph
+1. PostCreated
+   time: when post get created
+   sender: posts service
+   reciver: query
+   graph
 2. CommentCreated:
-time:
-sender: comments service
-reciever:moderation/query
+   time:
+   sender: comments service
+   reciever:moderation/query
 3. CommentModerated:
-time:
-sender: moderation
-reciever: comments
-id:string/content:string/postId:string/status:'approved'|'rejected'
+   time:
+   sender: moderation
+   reciever: comments
+   id:string/content:string/postId:string/status:'approved'|'rejected'
 4. CommentUpdated:
-time:after handling CommentModerated and update the comment accordingly
-sender:comments
-reciever:query
-id:string/content:string/postId:string/status:'approved'|'rejected'
+   time:after handling CommentModerated and update the comment accordingly
+   sender:comments
+   reciever:query
+   id:string/content:string/postId:string/status:'approved'|'rejected'
 
 dealing with missing event
