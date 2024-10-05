@@ -10,10 +10,10 @@ app.options("*", cors());
 app.use(bodyParser.json());
 const posts = {};
 //routers
-app.get("/posts", (req, res) => {
-  res.send(posts);
-});
-app.post("/posts", async (req, res) => {
+// app.get("/posts", (req, res) => {
+//   res.send(posts);
+// });
+app.post("/posts/create", async (req, res) => {
   // get a random string
   const id = randomBytes(4).toString("hex");
   const { title } = req.body;

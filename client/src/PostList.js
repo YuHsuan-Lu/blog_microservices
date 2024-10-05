@@ -34,7 +34,8 @@ const PostList = () => {
     // setPosts(res.data)
     // new version: use Query Service
     // const res = await axios.get('http://localhost:4002/posts')
-    const res = await axios.get("http://post.com/posts");
+    // const res = await axios.get("http://post.com/posts");
+    const res = await axios.get("http://post.com/posts/query");
     setPosts(res.data);
   };
   useEffect(() => {

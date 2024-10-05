@@ -29,7 +29,7 @@ const handleEvent = (type, data) => {
     comment.content = content;
   }
 };
-app.get("/posts", (req, res) => {
+app.get("/posts/query", (req, res) => {
   res.send(posts);
 });
 app.post("/events", (req, res) => {
